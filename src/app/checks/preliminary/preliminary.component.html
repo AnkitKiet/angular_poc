@@ -1,0 +1,133 @@
+<mat-card>
+    <mat-card-content>
+
+<div class="row" style="margin-top:10px;">
+<div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+<mat-checkbox>BlackList Check</mat-checkbox>
+</div>
+
+<div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+    <button type="button" class="btn btn-primary">BlackList Check</button>
+    </div>
+
+    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+        <mat-form-field>
+        <mat-select placeholder="Customer BlackListed">
+            <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+              {{ Blacklist.viewValue }}
+            </mat-option>
+          </mat-select>
+          </mat-form-field>
+        </div>
+
+</div>
+
+<div class="row">
+    <div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+    <mat-checkbox>Negative Check List</mat-checkbox>
+    </div>
+    
+    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+        <button type="button" class="btn btn-primary">Negative List Check</button>
+        </div>
+    
+        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+            <mat-form-field>
+            <mat-select placeholder="Not in Neagtive">
+                <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+                  {{ Blacklist.viewValue }}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+            </div>
+    
+    </div>
+
+    <div class="row">
+        <div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+        <mat-checkbox> Dedupe Check</mat-checkbox>
+        </div>
+        
+        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+            <button type="button" class="btn btn-primary"> Dedupe Check</button>
+            </div>
+        
+            <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                <mat-form-field>
+                <mat-select placeholder="Customer Exist With Bank">
+                    <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+                      {{ Blacklist.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  </mat-form-field>
+                </div>
+        
+        </div>
+
+        <div class="row">
+            <div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+            <mat-checkbox>Rejection Check</mat-checkbox>
+            </div>
+            
+            <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                <button type="button" class="btn btn-primary">Rejection Check</button>
+                </div>
+            
+                <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                    <mat-form-field>
+                    <mat-select placeholder="Customer ID">
+                        <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+                          {{ Blacklist.viewValue }}
+                        </mat-option>
+                      </mat-select>
+                      </mat-form-field>
+                    </div>
+            
+            </div>
+
+            <div class="row">
+                <div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+                <mat-checkbox>Bad Collateral Check</mat-checkbox>
+                </div>
+                
+                <div class="col-xs-4 col-sm-4	col-md-4 col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                    <button type="button" class="btn btn-primary">Bad Collateral Check</button>
+                    </div>
+                
+                    <div class="col-xs-4 col-sm-4	col-md-4 col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                        <mat-form-field>
+                        <mat-select placeholder="Bad Collateral">
+                            <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+                              {{ Blacklist.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                          </mat-form-field>
+                        </div>
+                
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-3 col-sm-3	col-md-3 col-lg-3">
+                    <mat-checkbox> One Obligor Check</mat-checkbox>
+                    </div>
+                    
+                    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                        <button type="button" class="btn btn-primary"> One Obligor Check</button>
+                        </div>
+                    
+                        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                            <mat-form-field>
+                            <mat-select placeholder=" One Obligor">
+                                <mat-option *ngFor="let Blacklist of Blacklists" [value]="Blacklist.value">
+                                  {{ Blacklist.viewValue }}
+                                </mat-option>
+                              </mat-select>
+                              </mat-form-field>
+                            </div>
+                    
+                    </div>
+
+
+    </mat-card-content>
+    </mat-card>
+

@@ -1,0 +1,64 @@
+<mat-accordion class="example-headers-align myaccordion">
+<mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #Preliminary>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+          <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+              <span class="text-span panel-title">Preliminary Check</span>
+      </mat-panel-title>
+      <mat-panel-description >
+              <span class="text-span panel-description"></span>
+              <span class="text-span panel-icon" style="margin-right:1px; ">
+                  <i class="material-icons" *ngIf="!Preliminary.expanded" >add</i>
+                  <i class="material-icons" *ngIf="Preliminary.expanded">substract</i>
+                </span>
+
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+     <app-preliminary></app-preliminary>
+       
+</mat-expansion-panel>
+
+
+
+<mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #Eligibility>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+            <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                <span class="text-span panel-title">Eligibility Check</span>
+        </mat-panel-title>
+        <mat-panel-description >
+                <span class="text-span panel-description"></span>
+                <span class="text-span panel-icon" style="margin-right:1px; ">
+                    <i class="material-icons" *ngIf="!Eligibility.expanded" >vertical_align_bottom</i>
+                    <i class="material-icons" *ngIf="Eligibility.expanded">vertical_align_top</i>
+                  </span>
+  
+        </mat-panel-description>
+  
+      </mat-expansion-panel-header>
+       <app-eligibility></app-eligibility>
+         
+  </mat-expansion-panel>
+
+  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #Customer>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+              <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                  <span class="text-span panel-title">Customer Checklist</span>
+          </mat-panel-title>
+          <mat-panel-description >
+                  <span class="text-span panel-description"></span>
+                  <span class="text-span panel-icon" style="margin-right:1px; ">
+                      <i class="material-icons" *ngIf="!Customer.expanded" >vertical_align_bottom</i>
+                      <i class="material-icons" *ngIf="Customer.expanded">vertical_align_top</i>
+                    </span>
+    
+          </mat-panel-description>
+    
+        </mat-expansion-panel-header>
+         <app-customer></app-customer>
+           
+    </mat-expansion-panel>
+
+</mat-accordion>

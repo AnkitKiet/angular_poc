@@ -1,0 +1,57 @@
+<mat-card style="background-color: transparent;">
+  <mat-card-content >
+   <mat-accordion class="example-headers-align myaccordion">
+
+              <mat-expansion-panel  hideToggle="true" class="myexpension" [expanded]="false" #uploadleads>
+                    <mat-expansion-panel-header>
+                      <mat-panel-title>
+                            <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                                <span class="text-span panel-title">Assessment of SOL/Prudentlal Limits </span>
+                        </mat-panel-title>
+                        <mat-panel-description >
+                                <span class="text-span panel-description"></span>
+                              
+
+                        </mat-panel-description>
+
+                      </mat-expansion-panel-header>
+                          <br/>
+                      <app-assessment-sql></app-assessment-sql>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #proposal>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                          <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                            <span class="text-span panel-title">Credit Policy</span>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                            <span class="text-span panel-description"></span>
+                           
+
+                    </mat-panel-description>
+
+                  </mat-expansion-panel-header>
+                      <br/>
+                        <app-credit-policy></app-credit-policy>
+                  
+                </mat-expansion-panel>
+
+                <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #AddressDetails>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                        <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                          <span class="text-span panel-title">Credit Check</span>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                          <span class="text-span panel-description"></span>
+                         
+
+                  </mat-panel-description>
+
+                </mat-expansion-panel-header>
+                    <br/>
+                    <app-credit-check></app-credit-check>
+                </mat-expansion-panel>
+            </mat-accordion>
+</mat-card-content>
+</mat-card>

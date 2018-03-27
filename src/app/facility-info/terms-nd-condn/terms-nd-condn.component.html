@@ -1,0 +1,93 @@
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource" >
+  <ng-container matColumnDef="name" class="col-md-3">
+    <mat-header-cell *matHeaderCellDef> Facility Type </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}" >
+        <mat-select [disabled]="!row.editing" placeholder={{row.currentData.name}}     >
+          <mat-option *ngFor="let food of foods" [value]="food.value">
+            {{ food.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="age" class="col-md-7">
+    <mat-header-cell *matHeaderCellDef> Terms and conditions </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.age">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actionsColumn" class="col-md-2">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="addButton()"><i class="fa fa-plus mat-icon"></i></button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+            <i class="fa fa-pencil mat-icon"></i>
+          </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+            <i class="fa fa-check mat-icon"></i>
+          </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+            <i class="fa fa-times mat-icon"></i>
+          </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+
+
+
+    <!-- Modal -->
+    <div class="modal fade in" id="repayment-dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Terms and conditions</h5>
+            <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+          </div>
+          <div class="modal-body">
+            
+            
+            <div class="row"  >
+             
+              <mat-form-field>
+                <mat-select placeholder="Facility Type" [(ngModel)]='formData.name'  >
+                  <mat-option *ngFor="let food of foods" [value]="food.viewValue" >
+                    {{ food.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+
+              <!-- <mat-form-field class="col-md-10">
+                <input matInput placeholder="Facility Type" [(ngModel)]='formData.name' >
+              </mat-form-field> -->
+           
+          </div>
+          <div class="row">
+           
+              <mat-form-field class="col-md-10">
+                <textarea  matInput placeholder=" Terms and conditions" [(ngModel)]='formData.age'   ></textarea>
+              </mat-form-field>
+            
+         
+            
+    
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+            <button type="button" class="btn btn-primary" (click)=savedata(formData) >Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

@@ -1,0 +1,275 @@
+.demo-tab-group {
+    border: 1px solid #e8e8e8;
+      padding: 5px 5px 5px 5px;
+      height: 200%;
+  }
+  
+  
+  .demo-tab-content {
+    padding: 1px;
+  }
+  :host ::ng-deep .mat-tab-body-content{
+   
+    min-height: 300px;
+    height:100%;
+    
+  }
+  :host ::ng-deep .mat-tab-header{
+    padding-bottom: 6px;
+  }
+  :host ::ng-deep .mat-tab-label { 
+     border:1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    border-radius: 0px 40px 0px 0px;
+    
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color:white;
+    font-weight: 700;
+  }
+  
+  :host ::ng-deep .mat-tab-label-active {
+    border: 1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+      padding: 10px;
+      border-radius: 0px 40px 0px 0px;
+   
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+      color: #ffffff;
+      font-weight: 700;
+  }
+  
+  
+  :host ::ng-deep  #mat-tab-label-3-0{
+    border: 1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+      padding: 10px;
+      border-radius: 0px 40px 0px 0px;
+   
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+      color: #ffffff;
+      font-weight: 700;
+  }
+  
+  :host ::ng-deep  #mat-tab-label-3-1{
+    border: 1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+      padding: 10px;
+      border-radius: 0px 40px 0px 0px;
+    
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+      color: #ffffff;
+      font-weight: 700;
+  }
+  :host ::ng-deep  #mat-tab-label-3-2{
+    border: 1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+      padding: 10px;
+      border-radius: 0px 40px 0px 0px;
+  
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+      color: #ffffff;
+      font-weight: 700;
+  }
+  :host ::ng-deep #mat-tab-label-3-3{
+
+    border: 1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    padding: 10px;
+    border-radius: 0px 40px 0px 0px;
+   
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color: #ffffff;
+    font-weight: 700;
+
+
+  }
+
+  
+  :host ::ng-deep #mat-tab-label-3-4{
+
+    border:1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    padding: 10px;
+    border-radius: 0px 40px 0px 0px;
+    background-color: transparent!important;
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color: #ffffff;
+    font-weight: 700;
+
+
+  }
+  
+  :host ::ng-deep #mat-tab-label-3-5{
+
+    border:1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    padding: 10px;
+    border-radius: 0px 40px 0px 0px;
+    background-color: transparent!important;
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color: #ffffff;
+    font-weight: 700;
+
+
+  }
+  
+  :host ::ng-deep #mat-tab-label-3-6{
+
+    border:1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    padding: 10px;
+    border-radius: 0px 40px 0px 0px;
+    background-color: transparent!important;
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color: #ffffff;
+    font-weight: 700;
+
+
+  }
+  :host ::ng-deep #mat-tab-label-3-7{
+
+    border:1px linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    padding: 10px;
+    border-radius: 0px 40px 0px 0px;
+    background-color: transparent!important;
+    background-image: linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);
+    background-position-x: initial;
+    background-position-y: initial;
+    background-size: initial;
+    color: #ffffff;
+    font-weight: 700;
+
+
+  }
+
+
+
+
+  .example-headers-align .mat-expansion-panel-header-title, 
+.example-headers-align .mat-expansion-panel-header-description {
+  flex-basis: 0;
+ 
+}
+
+.example-headers-align .mat-expansion-panel-header-description {
+  justify-content: space-between;
+  align-items: center;
+}
+ 
+
+.mat-expansion-panel:not([class*=mat-elevation-z]){
+	    box-shadow: 0 8px 0px -3px rgba(0,0,0,.2), 0 10px 26px 0 rgba(0,0,0,.14), 0 1px 15px 0 rgba(0,0,0,.12);
+	
+}
+.mat-expansion-panel{
+	margin-top:15px;
+	background-color: rgb(239, 245, 248);
+	-webkit-transition: box-shadow 0.3s ease-in-out 0s;
+	-moz-transition: box-shadow 0.3s ease-in-out 0s;
+-o-transition: box-shadow 0.3s ease-in-out 0s;
+-ms-transition: box-shadow 0.3s ease-in-out 0s;
+transition: box-shadow 0.5s ease-in-out 0s; 
+}
+
+
+.mat-expansion-panel:FOCUS{
+	transition: box-shadow 0.1s ease-in-out 0s; 
+}
+
+.mat-expansion-panel:HOVER{
+	box-shadow: 0 10px 20px #515151;
+}
+
+.mat-expansion-panel-header,.mat-action-row{
+    background:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+    
+  
+} 
+
+.mat-expansion-panel-header{
+	border-bottom:1px #000 solid;
+}
+
+.mat-expansion-panel-header.mat-expanded:focus, .mat-expansion-panel-header.mat-expanded:hover{
+    background:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+	color:#fff;
+}
+
+.mat-expansion-indicator::after, .mat-expansion-panel-header-description{
+	color:#000;
+}
+
+.mat-expansion-panel-header-title{
+	color:#000;
+} 
+
+.text-span{
+  color:#fff;	
+  font-size:  14px;
+  line-height: 33px;
+  font-family: 'Open Sans', 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+
+.example-headers-align{
+height:500px;
+}
+.panel-title-icon{
+	    margin-left: 1px;
+    padding-top: 12px;
+}
+
+.panel-title{
+	 margin-left: 50px;
+	 font-weight: 700;
+    padding-top: 5px;
+}
+
+
+.panel-description{
+	margin-left: 8px;
+}
+
+.panel-icon{
+	margin-right:0px;
+	line-height: 1;
+}
+
+.fa{
+	margin:inherit;
+}
+
+.mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-keyboard-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]).cdk-program-focused, .mat-expansion-panel:not(.mat-expanded) .mat-expansion-panel-header:not([aria-disabled=true]):hover{
+	background:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%); 
+
+}
+
+:host ::ng-deep .mat-expansion-panel-header ng-tns-c24-7 ng-trigger ng-trigger-expansionHeight ng-star-inserted mat-expanded{
+    height: 33px;
+}
+.mat-header-row{
+    background: #0092dc;
+    	color:#fff;
+}
+.headerColor{
+	background:rgb(0, 143, 226); 
+	color:#fff;
+  } 
+ 

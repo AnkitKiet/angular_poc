@@ -1,0 +1,205 @@
+<mat-toolbar><h4>Project Specific Facilities </h4></mat-toolbar>
+
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+
+  <ng-container matColumnDef="remarks">
+    <mat-header-cell *matHeaderCellDef> Name of Project </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.remarks">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="cashcnvrn">
+    <mat-header-cell *matHeaderCellDef> Purpose </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.cashcnvrn">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="qtyeva">
+    <mat-header-cell *matHeaderCellDef> Project Code </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.qtyeva">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="ltv">
+    <mat-header-cell *matHeaderCellDef> Sublimits </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.ltv">
+
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="score">
+    <mat-header-cell *matHeaderCellDef> Present Allocation </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.score">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="grade">
+    <mat-header-cell *matHeaderCellDef> Proposed Allocation </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.grade">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="lgd">
+    <mat-header-cell *matHeaderCellDef> Present Pricing </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.lgd">
+        <!-- <input matInput [formControl]="row.validator.controls['lgd']" type="number" placeholder="LGD" [(ngModel)]="row.currentData.lgd"> -->
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="proppricing">
+    <mat-header-cell *matHeaderCellDef> Proposed Pricing </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.proppricing">
+        <!-- <input matInput [formControl]="row.validator.controls['lgd']" type="number" placeholder="LGD" [(ngModel)]="row.currentData.lgd"> -->
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="preTenor">
+    <mat-header-cell *matHeaderCellDef> Present Tenor </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.preTenor">
+        <!-- <input matInput [formControl]="row.validator.controls['lgd']" type="number" placeholder="LGD" [(ngModel)]="row.currentData.lgd"> -->
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actionsColumn">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="addButton()">
+        <i class="fa fa-plus mat-icon"></i>Add</button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+        <i class="fa fa-pencil mat-icon"></i>
+      </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+        <i class="fa fa-check mat-icon"></i>
+      </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+        <i class="fa fa-times mat-icon"></i>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<br><br>
+<div class="container">
+<button type="button" class="btn btn-primary" style="margin-right:16px;">Save</button>
+</div>
+
+<!-- Modal -->
+<div class="modal fade in" id="repayment-dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 40px; background-image:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);">
+        <h5 class="modal-title" id="exampleModalLongTitle">Project Specific Facilities</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Name of Project" [(ngModel)]='formData.remarks'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Purpose" [(ngModel)]='formData.cashcnvrn'>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Project Code" [(ngModel)]='formData.qtyeva'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                    <mat-select placeholder="Cash Conversion">
+                      <mat-option *ngFor="let cash of cashlist" [value]="cash.value"  >
+                        {{ cash.viewValue }}
+                      </mat-option>
+                    </mat-select>
+                  </mat-form-field> -->
+            </div>
+          </div>
+          <div class="row">
+
+
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Sublimits" [(ngModel)]='formData.ltv'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                          <mat-select placeholder="Quality of evaluation">
+                            <mat-option *ngFor="let quality of qualityEvas" [value]="quality.value"  >
+                              {{ quality.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field> -->
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Present Allocation" [(ngModel)]='formData.score'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                          <mat-select placeholder="Asset Coverage(LTV)">
+                            <mat-option *ngFor="let ltv of LTVs" [value]="ltv.value"  >
+                              {{ ltv.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                        </mat-form-field> -->
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Proposed Allocation" [(ngModel)]='formData.grade'>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Present Pricing" [(ngModel)]='formData.lgd'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Proposed Pricing" [(ngModel)]='formData.proppricing'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Present Tenor" [(ngModel)]='formData.preTenor'>
+              </mat-form-field>
+            </div>
+
+          </div>
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+          <button type="button" class="btn btn-primary" (click)=savedata(formData)>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,0 +1,97 @@
+
+<div class="form">
+    <div class="row">
+    <div class="col-md-3">
+      <mat-form-field class="example-full-width">
+        <input matInput placeholder="Avg. RAROC for Main Fac(%)">
+        </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="Avg. RAROC for Main Sub Fac(%)">
+        </mat-form-field>
+    </div>
+    <div class="col-md-3">
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="Additional Income Req. for Main Facilities('000 OMR)">
+        </mat-form-field>
+      </div>
+      <div class="col-md-3 ">
+        <mat-form-field class="example-full-width">
+        <input matInput placeholder="Additional Income Req. for Sub Facilities('000 OMR)">
+        </mat-form-field>
+      </div>
+    
+    </div>       
+    </div>
+    <br/><br/>
+    <div class="example-container mat-elevation-z8">
+        <mat-table #table [dataSource]="dataSource">
+       
+          <!-- Position Column -->
+          <ng-container matColumnDef="Facility">
+            <mat-header-cell *matHeaderCellDef>Facility</mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.Facility}} </mat-cell>
+                  
+            
+          </ng-container>
+       
+          <!-- Name Column -->
+          <ng-container matColumnDef="Main">
+            <mat-header-cell *matHeaderCellDef>Main/Sub Limit</mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.Main}} </mat-cell>
+          </ng-container>
+       
+          <!-- Weight Column -->
+          <ng-container matColumnDef="Currency">
+            <mat-header-cell *matHeaderCellDef>Currency</mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.Currency}} </mat-cell>
+          </ng-container>
+       
+          <!-- Symbol Column -->
+          <ng-container matColumnDef="Existing">
+            <mat-header-cell *matHeaderCellDef>Existing Limit(000)</mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.Existing}} </mat-cell>
+          </ng-container>
+
+          <ng-container matColumnDef="Proposed">
+              <mat-header-cell *matHeaderCellDef>Proposed Limit(000)</mat-header-cell>
+              <mat-cell *matCellDef="let element" > {{element.Proposed}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Pricing">
+                <mat-header-cell *matHeaderCellDef>Proposed Pricing(% pa)</mat-header-cell>
+                <mat-cell *matCellDef="let element" > {{element.Pricing}} </mat-cell>
+              </ng-container>
+
+            <ng-container matColumnDef="Fee">
+                  <mat-header-cell *matHeaderCellDef>Fee Income(000)</mat-header-cell>
+                  <mat-cell *matCellDef="let element" > {{element.Fee}} </mat-cell>
+                </ng-container>
+
+            <ng-container matColumnDef="RAROC">
+                    <mat-header-cell *matHeaderCellDef>RAROC</mat-header-cell>
+                    <mat-cell *matCellDef="let element" > {{element.RAROC}} </mat-cell>
+            </ng-container>
+
+            <ng-container matColumnDef="Interest">
+                <mat-header-cell *matHeaderCellDef>Required Interest Rate</mat-header-cell>
+                <mat-cell *matCellDef="let element" > {{element.Interest}} </mat-cell>
+        </ng-container>
+
+        <ng-container matColumnDef="Additional">
+            <mat-header-cell *matHeaderCellDef>Additional Income Required(000)</mat-header-cell>
+            <mat-cell *matCellDef="let element" > {{element.Additional}} </mat-cell>
+    </ng-container>
+       
+          <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+          <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+        </mat-table>
+        <mat-paginator #paginator
+        [pageSize]="10"
+        [pageSizeOptions]="[5, 10, 20]"
+        [showFirstLastButtons]="true">
+</mat-paginator>
+       
+      </div>
+    

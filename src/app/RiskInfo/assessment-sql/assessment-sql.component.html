@@ -1,0 +1,42 @@
+
+       <div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+   
+    <!-- Position Column -->
+    <ng-container matColumnDef="position" [ngStyle]="">
+      <mat-header-cell *matHeaderCellDef> </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="previous">
+      <mat-header-cell *matHeaderCellDef class="headerColor"> Borrower</mat-header-cell>
+      <mat-cell *matCellDef="let element"  contenteditable='true' > {{element.previous}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="current">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Group</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.current}} </mat-cell>
+    </ng-container>
+   
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+</div>
+
+<div class="container">
+
+    <button type="button" class="btn btn-primary">
+      <span class="glyphicon glyphicon-search"></span>Search
+    </button>
+    <button type="button" class="btn btn-primary">
+      <span class="glyphicon glyphicon-refresh"></span>Refresh
+    </button>
+    <button type="button" class="btn btn-primary">
+      <span class="glyphicon glyphicon-save"></span>Save
+    </button>
+</div>

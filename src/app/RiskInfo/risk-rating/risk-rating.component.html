@@ -1,0 +1,71 @@
+
+<div class="form">
+<div class="row">
+<div class="col-md-6">
+	<mat-form-field>
+    <mat-select placeholder="Moody's Risk Grade" >
+			<mat-option value="select" aria-placeholder="">--Select--</mat-option>
+		  <mat-option value="a">A</mat-option>
+			<mat-option value="a++">A++</mat-option>
+			<mat-option value="b">B</mat-option>
+			<mat-option value="b+">B+</mat-option>
+			<mat-option value="o+">O+</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+<div class="col-md-6"> 
+				
+		<mat-form-field>
+    <mat-select placeholder="Asset Classification Grade">
+			<mat-option value="select" aria-placeholder="">--Select--</mat-option>
+      <mat-option value="standard">STANDARD</mat-option>
+			<mat-option value="mentation">SPECIAL MENTATION</mat-option>
+			<mat-option value="sub-standard">SUB-STANDARD</mat-option>
+			<mat-option value="doutful">DOUTFUL</mat-option>
+			<mat-option value="los">LOSS</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+
+</div>
+<div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource" >
+
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef class = "headerColor"> Label</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.position}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="previous">
+      <mat-header-cell *matHeaderCellDef class = "headerColor"> Previous </mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.previous}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="current">
+      <mat-header-cell *matHeaderCellDef class = "headerColor"> Current </mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.current}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="proposed">
+      <mat-header-cell *matHeaderCellDef class = "headerColor">Proposed </mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.proposed}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+ 
+</div> <br/>
+<br/>
+</div>
+<label>1. Justification / Reason for any change (Improvement or adverse) in Rating</label><br>  
+ <div id="froala-editor" [froalaEditor]></div> 
+  
+

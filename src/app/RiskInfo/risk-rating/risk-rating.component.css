@@ -1,0 +1,16 @@
+.headerColor{
+	background:rgb(0, 143, 226); 
+	color:#fff;
+  } 
+ .mat-header-row{
+    background: #0092dc;
+    min-height: 30px;
+}
+ .mat-row {
+    min-height: 30px;
+    min-width: 50px;
+}
+::placeholder {
+    color: red;
+    opacity: 1; /* Firefox */
+}

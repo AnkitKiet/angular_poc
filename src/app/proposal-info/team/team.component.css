@@ -1,0 +1,39 @@
+.example-form {
+    min-width: 150px;
+    max-width: 500px;
+    width: 100%;
+  }
+  
+  .example-full-width {
+    width: 100%;
+  }
+  :host ::ngdeep .input.mat-input-element{
+    color: #000000;
+    height: 50px;
+  }
+  .example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+  }
+   .mat-header-row {
+      background:rgb(0, 143, 226);
+      
+    
+  }
+  .mat-header-cell{
+    font-size: 16px;
+    font-weight: 500;
+  text-align: center;
+  color: white;
+  word-wrap: normal;
+  }
+  .mat-row{
+    text-align: center;
+  }
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+  

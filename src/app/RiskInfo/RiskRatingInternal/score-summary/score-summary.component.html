@@ -1,0 +1,42 @@
+
+<form class="example-form">
+  <br>
+  <div class="row">
+ <div class="col-md-3">
+   
+  <mat-form-field class="example-full-width">
+    <input matInput  placeholder="Score Obtained">
+  </mat-form-field>
+  
+ </div>
+ 
+ <div class="col-md-3">
+  
+  <mat-form-field class="example-full-width">
+    <input matInput  placeholder=" Risk Description">
+  </mat-form-field>
+ </div>
+ 
+  <div class="col-md-3"> 	
+  
+		<mat-form-field>
+    <mat-select ng-disabled="all"  placeholder="Rating">
+			<mat-option value="select" aria-placeholder="">--Select--</mat-option>
+      <mat-option value="standard">Regular</mat-option>
+			<mat-option value="mentation">Some delays</mat-option>
+			<mat-option value="sub-standard">Default</mat-option>
+    </mat-select>
+  </mat-form-field>
+</div>
+ 
+  <div class="col-md-3">
+    
+  <mat-form-field class="example-full-width">
+    <input matInput  placeholder=" Probability of Default(%)" >
+  </mat-form-field>
+  </div> 
+  </div>
+ <div class="save-button">
+       <button type="button" style=" margin-right:5px;" class="btn btn-primary">Save</button>
+</div>
+</form>

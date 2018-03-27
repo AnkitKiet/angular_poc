@@ -1,0 +1,132 @@
+<mat-card>
+    <mat-card-content>
+<div class="row">
+    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+        <mat-form-field>
+            <mat-select placeholder="Within Target Market">
+                <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                  {{ Blacklist.viewValue }}
+                </mat-option>
+              </mat-select>
+              </mat-form-field>
+    </div>
+
+    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+        <mat-form-field class="example-full-width">
+            <input matInput >
+          </mat-form-field>
+        
+    </div>   
+    
+    </div>
+
+    <div class="row">
+        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+            <mat-form-field>
+                <mat-select placeholder="CBO Checking">
+                    <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                      {{ Blacklist.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                  </mat-form-field>
+        </div>
+    
+        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+            <mat-form-field class="example-full-width">
+                <input matInput >
+              </mat-form-field>
+            
+        </div>   
+        
+        </div>
+
+        <div class="row">
+            <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                <mat-form-field>
+                    <mat-select placeholder="Years in Business">
+                        <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                          {{ Blacklist.viewValue }}
+                        </mat-option>
+                      </mat-select>
+                      </mat-form-field>
+            </div>
+        
+            <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                <mat-form-field class="example-full-width">
+                    <input matInput >
+                  </mat-form-field>
+                
+            </div>   
+            
+            </div>
+
+            <div class="row">
+                <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                    <mat-form-field>
+                        <mat-select placeholder="Bank Statement">
+                            <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                              {{ Blacklist.viewValue }}
+                            </mat-option>
+                          </mat-select>
+                          </mat-form-field>
+                </div>
+            
+                <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                    <mat-form-field class="example-full-width">
+                        <input matInput >
+                      </mat-form-field>
+                    
+                </div>   
+                
+                </div>
+
+                <div class="row">
+                    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                        <mat-form-field>
+                            <mat-select placeholder="Buyer Checking">
+                                <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                                  {{ Blacklist.viewValue }}
+                                </mat-option>
+                              </mat-select>
+                              </mat-form-field>
+                    </div>
+                
+                    <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                        <mat-form-field class="example-full-width">
+                            <input matInput >
+                          </mat-form-field>
+                        
+                    </div>   
+                    
+                    </div>
+                    <div class="row">
+                        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                            <mat-form-field>
+                                <mat-select placeholder="Debit Service Ratio">
+                                    <mat-option *ngFor="let Blacklist of lists" [value]="Blacklist.value">
+                                      {{ Blacklist.viewValue }}
+                                    </mat-option>
+                                  </mat-select>
+                                  </mat-form-field>
+                        </div>
+                    
+                        <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                            <mat-form-field class="example-full-width">
+                                <input matInput >
+                              </mat-form-field>
+                            
+                        </div>   
+                        
+                        </div>
+
+                        <div class="row">
+                          <div class="col-xs-4 col-sm-4	col-md-4 col-lg-4">
+                              <mat-form-field class="example-full-width">
+                                  <input matInput placeholder="Result" >
+                                </mat-form-field>
+                              
+                          </div>
+                        </div>
+
+  </mat-card-content>
+</mat-card>

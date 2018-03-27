@@ -1,0 +1,78 @@
+  <div class="example-container mat-elevation-z8">
+  <mat-table #table [dataSource]="dataSource">
+ <!-- Weight Column -->
+    <ng-container matColumnDef="customertype">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Customer Type	</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.customertype}} </mat-cell>
+    </ng-container>
+   
+    <!-- Position Column -->
+    <ng-container matColumnDef="legalstatus" >
+      <mat-header-cell *matHeaderCellDef class="headerColor">Legal Status </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.legalstatus}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="groupcustomer">
+      <mat-header-cell *matHeaderCellDef class="headerColor"> Group Customer</mat-header-cell>
+      <mat-cell *matCellDef="let element"  contenteditable='true' > {{element.groupcustomer}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="singleentity">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Exposure Allowed Single Entity (In %)</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.singleentity}} </mat-cell>
+    </ng-container>
+     <!-- Weight Column -->
+    <ng-container matColumnDef="groupentity">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Exposure Allowed Group Entity (In %)	</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.groupentity}} </mat-cell>
+    </ng-container>
+   
+    <!-- Position Column -->
+    <ng-container matColumnDef="allowedsingle" [ngStyle]="">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Exposure Allowed Single Entity (Amount)</mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.allowedsingle}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="allowedgroup">
+      <mat-header-cell *matHeaderCellDef class="headerColor"> Exposure Allowed Group Entity (Amount)</mat-header-cell>
+      <mat-cell *matCellDef="let element"  contenteditable='true' > {{element.allowedgroup}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="customerexposure">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Customer Exposure</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.customerexposure}} </mat-cell>
+    </ng-container>
+
+     <!-- Position Column -->
+    <ng-container matColumnDef="groupexposure" [ngStyle]="">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Group Exposure </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.groupexposure}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="customerexposurelimit">
+      <mat-header-cell *matHeaderCellDef class="headerColor"> Customer Exposure Within Limit</mat-header-cell>
+      <mat-cell *matCellDef="let element"  contenteditable='true' > {{element.customerexposurelimit}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="groupexposurelimit">
+      <mat-header-cell *matHeaderCellDef class="headerColor">Group Exposure Within Limit</mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.groupexposurelimit}} </mat-cell>
+    </ng-container>
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  <p>No record found!!</p>
+  </div>
+  

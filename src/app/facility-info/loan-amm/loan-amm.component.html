@@ -1,0 +1,303 @@
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Facility Type </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.name">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Currency">
+    <mat-header-cell *matHeaderCellDef> Loan Amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.Currency">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="proplimit">
+    <mat-header-cell *matHeaderCellDef> Interest Rate </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.proplimit">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="intype">
+    <mat-header-cell *matHeaderCellDef> Loan Tenure (in months) </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.intype">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="rating">
+    <mat-header-cell *matHeaderCellDef> Insurance amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.rating">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="baserate">
+    <mat-header-cell *matHeaderCellDef> Other Expenses </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.baserate">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="bps">
+    <mat-header-cell *matHeaderCellDef> Deposit Amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.bps">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="totint">
+    <mat-header-cell *matHeaderCellDef> Finance Amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.totint">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="pricingint">
+    <mat-header-cell *matHeaderCellDef> Moratorium Period </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.pricingint">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="penalty">
+    <mat-header-cell *matHeaderCellDef>Instalment Date </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.penalty">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="paytype">
+    <mat-header-cell *matHeaderCellDef> Payment Type </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.paytype">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="stepdown">
+    <mat-header-cell *matHeaderCellDef> StepDown Amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.stepdown">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="payIn">
+    <mat-header-cell *matHeaderCellDef> Payment In </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.payIn">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="amnt">
+    <mat-header-cell *matHeaderCellDef> Amount </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.amnt">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="validfrom">
+    <mat-header-cell *matHeaderCellDef> Valid From </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing" [(ngModel)]="row.currentData.validfrom">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="regPay">
+    <mat-header-cell *matHeaderCellDef> No of Regular Payments </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.regPay">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+
+  <ng-container matColumnDef="actionsColumn">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="addButton()">
+        <i class="fa fa-plus mat-icon"></i>
+      </button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+        <i class="fa fa-pencil mat-icon"></i>
+      </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+        <i class="fa fa-check mat-icon"></i>
+      </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+        <i class="fa fa-times mat-icon"></i>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+
+
+<!-- Modal -->
+<div class="modal fade in" id="repayment-dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header" style="height: 40px; background-image:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);">
+        <h5 class="modal-title" id="exampleModalLongTitle">Facility Wise Risk Rating</h5>
+        <!-- <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button> -->
+      </div>
+      <div class="modal-body">
+
+        <div class="form-group">
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <mat-select placeholder="Facility Type">
+                  <mat-option *ngFor="let food of foods" [value]="food.value">
+                    {{ food.viewValue }}
+                  </mat-option>
+                </mat-select>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Loan Amount" [(ngModel)]='formData.Currency'>
+              </mat-form-field>
+            </div>
+
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Interest Rate" [(ngModel)]='formData.proplimit'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                  <mat-select placeholder="Cash Conversion">
+                    <mat-option *ngFor="let cash of cashlist" [value]="cash.value"  >
+                      {{ cash.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field> -->
+            </div>
+          </div>
+          <div class="row">
+
+
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Loan Tenure (in months)" [(ngModel)]='formData.intype'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                        <mat-select placeholder="Quality of evaluation">
+                          <mat-option *ngFor="let quality of qualityEvas" [value]="quality.value"  >
+                            {{ quality.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field> -->
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Insurance amount" [(ngModel)]='formData.rating'>
+              </mat-form-field>
+              <!-- <mat-form-field>
+                        <mat-select placeholder="Asset Coverage(LTV)">
+                          <mat-option *ngFor="let ltv of LTVs" [value]="ltv.value"  >
+                            {{ ltv.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field> -->
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Other Expenses" [(ngModel)]='formData.baserate'>
+              </mat-form-field>
+            </div>
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Deposit Amount" [(ngModel)]='formData.bps'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Finance Amount" [(ngModel)]='formData.totint'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Moratorium Period" [(ngModel)]='formData.pricingint'>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Instalment Date" [(ngModel)]='formData.penalty'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Payment Type" [(ngModel)]='formData.paytype'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="StepDown Amount" [(ngModel)]='formData.stepdown'>
+              </mat-form-field>
+            </div>
+
+          </div>
+          <div class="row">
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Payment In" [(ngModel)]='formData.payIn'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Amount" [(ngModel)]='formData.amnt'>
+              </mat-form-field>
+            </div>
+            <div class="col-md-4">
+              <mat-form-field>
+                <input matInput placeholder="Valid From" [(ngModel)]='formData.validfrom'>
+              </mat-form-field>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="No of Regular Payments" [(ngModel)]='formData.regPay'>
+                </mat-form-field>
+              </div>
+            </div>
+
+          </div>
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+          <button type="button" class="btn btn-primary" (click)=savedata(formData)>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

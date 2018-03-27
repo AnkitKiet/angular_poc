@@ -1,0 +1,44 @@
+<mat-expansion-panel  hideToggle="true" class="myexpension" [expanded]="false" #uploadleads4>
+     <mat-expansion-panel-header style="height: 33px;" class = "headerColor">
+            <mat-panel-title>
+                  <span class="text-span panel-title-icon"><i class="material-icons">addition</i></span>
+                           <span class="text-span panel-title">CHECK LIST FOR IFRS 9 STAGING </span>
+            </mat-panel-title>
+      </mat-expansion-panel-header>
+       <div class="example-container mat-elevation-z8">
+         <br/>
+  <mat-table #table [dataSource]="dataSource">
+   
+    <!-- Position Column -->
+    <ng-container matColumnDef="position">
+      <mat-header-cell *matHeaderCellDef class = "headerColor">SI.No. </mat-header-cell>
+      <mat-cell *matCellDef="let element"> {{element.position}} </mat-cell>
+			
+      
+    </ng-container>
+
+    <!-- Name Column -->
+    <ng-container matColumnDef="previous">
+      <mat-header-cell *matHeaderCellDef class = "headerColor"> Parameters</mat-header-cell>
+      <mat-cell *matCellDef="let element" > {{element.previous}} </mat-cell>
+    </ng-container>
+
+    <!-- Weight Column -->
+    <ng-container matColumnDef="current">
+      <mat-header-cell *matHeaderCellDef class = "headerColor"></mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.current}} </mat-cell>
+    </ng-container>
+
+    <!-- Symbol Column -->
+    <ng-container matColumnDef="proposed">
+      <mat-header-cell *matHeaderCellDef></mat-header-cell>
+      <mat-cell *matCellDef="let element" contenteditable='true'> {{element.proposed}} </mat-cell>
+    </ng-container>
+
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+
+ 
+</div>
+</mat-expansion-panel>

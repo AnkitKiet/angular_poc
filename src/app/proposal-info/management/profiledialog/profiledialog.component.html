@@ -1,0 +1,22 @@
+<div mat-dialog-content>    
+    <mat-form-field>
+      <input matInput placeholder="Name"  [(ngModel)]="user.first"  >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Position"  [(ngModel)]="user.second"   >
+    </mat-form-field>
+    <mat-form-field>
+      <input matInput placeholder="Age"  [(ngModel)]="user.third"  >
+    </mat-form-field>
+    <mat-form-field>
+    <input matInput placeholder="Year of Experience"  [(ngModel)]="user.fourth"  >
+      </mat-form-field>
+    <mat-form-field>
+          <input matInput placeholder="Qualification"  [(ngModel)]="user.fifth"  >
+    </mat-form-field>
+  </div>
+  <div mat-dialog-actions>
+    <button mat-button (click)="onNoClick()">No Thanks</button>
+    <button mat-button (click)="onClick(user)">Save</button>
+    <button mat-button cdkFocusInitial (click)="onOkClick()" >Ok</button>
+  </div>

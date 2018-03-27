@@ -1,0 +1,211 @@
+
+ 
+ <mat-accordion class="example-headers-align myaccordion">
+
+             
+    <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #proposal>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+            <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+              <span class="text-span panel-title">Overview/ Brief History</span>
+      </mat-panel-title>
+      <mat-panel-description>
+              <span class="text-span panel-description"></span>
+             <span class="text-span panel-icon">
+               <i class="material-icons" *ngIf="!proposal.expanded" >vertical_align_bottom</i>
+               <i class="material-icons" *ngIf="proposal.expanded">vertical_align_top</i>
+             </span>
+
+      </mat-panel-description>
+
+    </mat-expansion-panel-header>
+        <br/>
+        <div>
+        <label for="kfjf">Overview/Brief History</label>
+      </div>
+        <br/>
+      
+
+        <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+  
+        <!-- <app-generalinfo (showLoader)="chnageLoaderState($event)" #GeneralinfoComponent></app-generalinfo> -->
+     <!-- <mat-action-row>
+      <button mat-fab color="primary" class ="save" (click)="saveLead()">
+          <i class="material-icons">save</i>
+      </button>
+      </mat-action-row> -->
+      <br/>
+      <button type="button" style="margin-right:5px;" class="btn btn-primary">Save</button>
+     
+  </mat-expansion-panel>
+
+  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #AddressDetails>
+  <mat-expansion-panel-header>
+    <mat-panel-title>
+          <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+            <span class="text-span panel-title">Business and Industry</span>
+    </mat-panel-title>
+    <mat-panel-description>
+            <span class="text-span panel-description"></span>
+           <span class="text-span panel-icon">
+             <i class="material-icons" *ngIf="!AddressDetails.expanded" >vertical_align_bottom</i>
+             <i class="material-icons" *ngIf="AddressDetails.expanded">vertical_align_top</i>
+           </span>
+
+    </mat-panel-description>
+
+  </mat-expansion-panel-header>
+      <br/>
+
+      <!-- <app-address-details>#address</app-address-details> -->
+      <div>
+        <label for="kfjf">Business</label>
+      </div>
+        <br/>
+
+        <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+        <br/>  <br/>
+        <div>
+          <label for="kfjf">Industry</label>
+        </div>
+          <br/>
+
+          <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+          <br/>
+    <button type="button" class="btn btn-primary">Spell Check</button>
+    <button type="button" class="btn btn-primary">Save</button>
+  </mat-expansion-panel>
+
+
+  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #Team>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+              <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                <span class="text-span panel-title">Team/Management Profile</span>
+        </mat-panel-title>
+        <mat-panel-description>
+                <span class="text-span panel-description"></span>
+               <span class="text-span panel-icon">
+                 <i class="material-icons" *ngIf="!Team.expanded" >vertical_align_bottom</i>
+                 <i class="material-icons" *ngIf="Team.expanded">vertical_align_top</i>
+               </span>
+    
+        </mat-panel-description>
+    
+      </mat-expansion-panel-header>
+          <br/>    
+         <app-management></app-management>          
+      </mat-expansion-panel>
+
+
+  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #purpose>
+    <mat-expansion-panel-header>
+      <mat-panel-title>
+            <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                <span class="text-span panel-title">Purpose and Justification of proposed facilities </span>
+        </mat-panel-title>
+        <mat-panel-description >
+                <span class="text-span panel-description"></span>
+                <span class="text-span panel-icon">
+                    <i class="material-icons" *ngIf="!purpose.expanded" >vertical_align_bottom</i>
+                    <i class="material-icons" *ngIf="purpose.expanded">vertical_align_top</i>
+                  </span>
+
+        </mat-panel-description>
+
+      </mat-expansion-panel-header>
+          <br/>
+          <div>
+              <label for="kfjf">Purpose and Justification</label>
+            </div>
+              <br/>
+      
+              <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+              <br/>  <br/>
+              <div>
+                <label for="kfjf">Pricing Justification</label>
+              </div>
+                <br/>
+      
+                <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+                <br/><br/>
+                <div>
+                  <label for="kfjf">Changes in the terms from last sanctioned</label>
+                </div>
+                  <br/>
+        
+                  <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+                  <br/>
+          <button type="button" class="btn btn-primary">Save</button>
+  </mat-expansion-panel>
+
+
+
+  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #relation>
+      <mat-expansion-panel-header>
+        <mat-panel-title>
+              <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                  <span class="text-span panel-title">Relationship Plan </span>
+          </mat-panel-title>
+          <mat-panel-description >
+                  <span class="text-span panel-description"></span>
+                  <span class="text-span panel-icon">
+                      <i class="material-icons" *ngIf="!relation.expanded" >vertical_align_bottom</i>
+                      <i class="material-icons" *ngIf="relation.expanded">vertical_align_top</i>
+                    </span>
+  
+          </mat-panel-description>
+  
+        </mat-expansion-panel-header>
+            <br/>
+            <div>
+                <label for="kfjf">a. Ancillary Business</label>
+              </div>
+                <br/>
+        
+                <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+                <br/>  <br/>
+                <div>
+                  <label for="kfjf">b. Group Plan(For Lending/ Non Lending Products)</label>
+                </div>
+                  <br/>
+        
+                  <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+                  <br/><br/>
+                  <div>
+                    <label for="kfjf">c. Activity Plan(For Lending/ Non Lending Products)</label>
+                  </div>
+                    <br/>
+          
+                    <ckeditor [config]="{uiColor: ' linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);'}"  [readonly]="false" ></ckeditor>
+                    <br/>
+            <button type="button" class="btn btn-primary">Save</button>
+    </mat-expansion-panel>
+  
+
+
+    <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #Customer>
+        <mat-expansion-panel-header>
+          <mat-panel-title>
+                <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                    <span class="text-span panel-title">Customer RAROC </span>
+            </mat-panel-title>
+            <mat-panel-description >
+                    <span class="text-span panel-description"></span>
+                    <span class="text-span panel-icon">
+                        <i class="material-icons" *ngIf="!Customer.expanded" >vertical_align_bottom</i>
+                        <i class="material-icons" *ngIf="Customer.expanded">vertical_align_top</i>
+                      </span>
+    
+            </mat-panel-description>
+    
+          </mat-expansion-panel-header>
+              <br/>
+             <button type="button" class="btn btn-primary">Initiate RAROC</button>
+             <br/>
+             <br/>
+             <app-team></app-team>
+             
+      </mat-expansion-panel>
+
+</mat-accordion>

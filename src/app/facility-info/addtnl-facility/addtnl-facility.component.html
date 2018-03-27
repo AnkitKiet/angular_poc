@@ -1,0 +1,143 @@
+<mat-toolbar><h4>Additional fields for facility having Restructure remarks</h4></mat-toolbar>
+
+
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef>Facility Type </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <mat-select [disabled]="!row.editing" placeholder={{row.currentData.name}}>
+          <mat-option *ngFor="let facility of facilities" [value]="facility.value">
+            {{ facility.viewValue }}
+          </mat-option>
+        </mat-select>
+      </mat-form-field>
+
+
+      <!--<mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing"  [(ngModel)]="row.currentData.name">
+      </mat-form-field>-->
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="Currency">
+    <mat-header-cell *matHeaderCellDef> Principal Restructure </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.Currency">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="proplimit">
+    <mat-header-cell *matHeaderCellDef>Interest Capitalized </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.proplimit">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="intype">
+    <mat-header-cell *matHeaderCellDef> New Money </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.intype">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="rating">
+    <mat-header-cell *matHeaderCellDef> Total </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.rating">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actionsColumn">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="addButton()"><i class="fa fa-plus mat-icon">Add</i></button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+        <i class="fa fa-pencil mat-icon"></i>
+      </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+        <i class="fa fa-check mat-icon"></i>
+      </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+        <i class="fa fa-times mat-icon"></i>
+      </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+<br><br>
+<div class="container">
+<button type="button" class="btn btn-primary" style="margin-right:16px;">Save</button>
+</div>
+<br><br>
+
+<!-- Modal -->
+<div class="modal fade in" id="repayment-dialog" tabindex="-1">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLongTitle">Additional fields for facility having Restructure remarks</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+      </div>
+      <div class="modal-body">
+
+
+        <div class="row">
+          <div class="col-md-4">
+            <!--<mat-form-field>
+                <input matInput placeholder="Facility Type" [(ngModel)]='formData.name' >
+              </mat-form-field>-->
+            <mat-form-field>
+              <mat-select placeholder="Facility Type" [(ngModel)]='formData.name'>
+                <mat-option *ngFor="let facility of facilities" [value]="facility.value">
+                  {{ facility.viewValue }}
+                </mat-option>
+              </mat-select>
+            </mat-form-field>
+
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput placeholder="Principal Restructure" [(ngModel)]='formData.Currency'>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput placeholder="Interest Capitalized" [(ngModel)]='formData.proplimit'>
+            </mat-form-field>
+          </div>
+
+
+        </div>
+        <div class="row">
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput placeholder="New Money" [(ngModel)]='formData.intype'>
+            </mat-form-field>
+          </div>
+          <div class="col-md-4">
+            <mat-form-field>
+              <input matInput placeholder="Total" [(ngModel)]='formData.rating'>
+            </mat-form-field>
+          </div>
+
+
+
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+          <button type="button" class="btn btn-primary" (click)=savedata(formData)>Save changes</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

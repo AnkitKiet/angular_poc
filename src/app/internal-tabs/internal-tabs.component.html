@@ -1,0 +1,19 @@
+<mat-card style="background-color: transparent;padding: 0px">
+  <mat-card-content >
+        <mat-tab-group class="demo-tab-group"  (selectedTabChange)="onLinkClick($event)">
+          
+      <mat-tab label ="{{tabLink.label}}"*ngFor="let tabLink of tabLinks; let i = index"
+      > 
+      <ng-template matTabContent>
+        <router-outlet   ></router-outlet>
+      </ng-template>
+        
+
+      
+      </mat-tab>
+     
+    </mat-tab-group>
+  
+  </mat-card-content>
+
+</mat-card>

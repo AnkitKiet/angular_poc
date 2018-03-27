@@ -1,0 +1,39 @@
+.mat-card:not([class*=mat-elevation-z]){
+	box-shadow: none;
+}
+
+.mat-card{
+	padding:0;
+}
+
+.header-card{
+	height:5%;
+	background-color: #ecf0f9;
+}
+
+.header-logo{
+	width:225px;
+}
+
+.card-image {
+  background-image: url('../../assets/images/logo.png');
+  background-size: cover;
+}
+
+.mat-card-content{
+	overflow:hidden;
+}
+
+.header-card-logo{
+	float:left;
+	width:20%;
+}
+
+.header-content{
+	width:80%;
+}
+
+
+.header-content .mat-form-field{
+	width:80%;
+}

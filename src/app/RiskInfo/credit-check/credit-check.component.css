@@ -1,0 +1,14 @@
+.mat-header-row{
+    background: #0092dc;
+    padding-right:1 solid #F2F7F9;
+    padding-left:1 solid #F2F7F9;
+    
+}
+
+.mat-header-cell{
+   border-left: 2px solid gold;  
+}
+.headerColor{
+	background:rgb(0, 143, 226); 
+	color:#fff;
+  } 

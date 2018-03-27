@@ -1,0 +1,169 @@
+<mat-card>
+    <mat-card-content>
+      <div class="row">
+      <mat-form-field>
+        <input matInput [matDatepicker]="picker" placeholder="Limit Expiry Date">
+        <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+        <mat-datepicker #picker></mat-datepicker>
+      </mat-form-field>
+    </div>
+    <div class="row">
+      <mat-form-field>
+          <input matInput [matDatepicker]="picker1" placeholder="Temporary Extension Granted">
+          <mat-datepicker-toggle matSuffix [for]="picker1"></mat-datepicker-toggle>
+          <mat-datepicker #picker1></mat-datepicker>
+        </mat-form-field>
+      </div>
+      <div class="row">
+        <mat-form-field>
+            <input matInput [matDatepicker]="picker2" placeholder="Validity of CR Certificate">
+            <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+            <mat-datepicker #picker2></mat-datepicker>
+          </mat-form-field>
+        </div>
+        <div class="row">
+          <mat-form-field>
+              <input matInput [matDatepicker]="picker3" placeholder="Validity of OCCI Registration">
+              <mat-datepicker-toggle matSuffix [for]="picker3"></mat-datepicker-toggle>
+              <mat-datepicker #picker3></mat-datepicker>
+            </mat-form-field>
+        </div>
+
+            <div class="row">
+            <mat-form-field>
+                <input matInput [matDatepicker]="picker4" placeholder="Validity of Life Insurance">
+                <mat-datepicker-toggle matSuffix [for]="picker4"></mat-datepicker-toggle>
+                <mat-datepicker #picker4></mat-datepicker>
+              </mat-form-field>
+            </div>
+            <div class="row">
+            <mat-form-field class="example-full-width">
+                <textarea matInput placeholder="Validity of Fire Insurance on-Mortgaged Property-Stocks/other assets financed"></textarea>
+              </mat-form-field>
+            </div>
+
+            <div class="row">
+                <mat-form-field class="example-full-width">
+                    <textarea matInput placeholder="Mortgaged Property-Latest Valuation"></textarea>
+                  </mat-form-field>
+                </div>
+
+                <div class="row">
+                    <mat-form-field class="example-full-width">
+                        <textarea matInput placeholder="Financial Spread Sheet"></textarea>
+                      </mat-form-field>
+                    </div>
+
+
+                    <div class="row">
+                        <mat-form-field class="example-full-width">
+                            <textarea matInput placeholder="Risk Grading Sheet(Moody's)"></textarea>
+                          </mat-form-field>
+                        </div>
+               <div class="row">
+                            <mat-form-field class="example-full-width">
+                                <textarea matInput placeholder="Latest Audited Financials and Date of Receipt"></textarea>
+                              </mat-form-field>
+                            </div>
+                            <div class="row">
+                                <mat-form-field class="example-full-width">
+                                    <textarea matInput placeholder="YTD Performance"></textarea>
+                                  </mat-form-field>
+                                </div>
+
+                                <div class="row">
+                                    <mat-form-field class="example-full-width">
+                                        <textarea matInput placeholder="Any Pending Security Creations-for Renewals"></textarea>
+                                      </mat-form-field>
+                                    </div>
+
+                <div class="row">
+                        <mat-form-field>
+                <input matInput [matDatepicker]="picker5" placeholder="Last Visit Report">
+                            <mat-datepicker-toggle matSuffix [for]="picker5"></mat-datepicker-toggle>
+                                <mat-datepicker #picker5></mat-datepicker>
+                          </mat-form-field>      
+                                </div>   
+                                
+                                
+                                <div class="row">                                   
+                                        <mat-form-field>
+                                            <mat-select placeholder="Confirmation of Security/ doc. from Credit Admin. /CAD Certificate">
+                                                <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                  {{ Blacklist.viewValue }}
+                                                </mat-option>
+                                              </mat-select>
+                                              </mat-form-field>
+                                    </div>
+                                    <div class="row">
+                                       
+                                            <mat-form-field>
+                                                <mat-select placeholder="Whether Limit Expiry dates,Account Grade and Interest Rates,Correctly fed in the System at Account/ Customer Levels">
+                                                    <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                      {{ Blacklist.viewValue }}
+                                                    </mat-option>
+                                                  </mat-select>
+                                                  </mat-form-field>
+                                        </div>
+
+                                        <div class="row">
+                                            
+                                                <mat-form-field>
+                                                    <mat-select placeholder="Whether Credit File Reviewed for Proper Filing of Papers and All Old Approvals in Place?">
+                                                        <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                          {{ Blacklist.viewValue }}
+                                                        </mat-option>
+                                                      </mat-select>
+                                                      </mat-form-field>
+                                            </div>
+
+
+                                            <div class="row">
+                                                
+                                                    <mat-form-field>
+                                                        <mat-select placeholder="Whether CBO's Caution List and Bank's Caution List Checked? Details,if the Name Appears.">
+                                                            <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                              {{ Blacklist.viewValue }}
+                                                            </mat-option>
+                                                          </mat-select>
+                                                          </mat-form-field>
+                                                </div>
+
+
+                                                <div class="row">
+                                                    
+                                                        <mat-form-field>
+                                                            <mat-select placeholder="Whether Auditor's Comments Placed in the Credit File and Duly Commented in the Proposal?">
+                                                                <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                                  {{ Blacklist.viewValue }}
+                                                                </mat-option>
+                                                              </mat-select>
+                                                              </mat-form-field>
+                                                    </div>
+
+                                                    <div class="row">
+                                                        
+                                                            <mat-form-field>
+                                                                <mat-select placeholder="Whether Lien Marked on FDs, if Any?">
+                                                                    <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                                      {{ Blacklist.viewValue }}
+                                                                    </mat-option>
+                                                                  </mat-select>
+                                                                  </mat-form-field>
+                                                        </div>
+
+                                                        <div class="row">
+                                                            
+                                                                <mat-form-field>
+                                                                    <mat-select placeholder="Whether Covenants Complied-Check Off">
+                                                                        <mat-option *ngFor="let Blacklist of clists" [value]="Blacklist.value">
+                                                                          {{ Blacklist.viewValue }}
+                                                                        </mat-option>
+                                                                      </mat-select>
+                                                                      </mat-form-field>
+                                                            </div>
+                            
+   
+    </mat-card-content>
+  </mat-card>
+    

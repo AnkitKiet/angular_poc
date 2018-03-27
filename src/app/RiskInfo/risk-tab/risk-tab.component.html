@@ -1,0 +1,101 @@
+<mat-card style="background-color: transparent;">
+  <mat-card-content >
+        <mat-tab-group class="demo-tab-group">
+<mat-tab label="Risk Rating">
+   <mat-accordion class="example-headers-align myaccordion">
+
+              <mat-expansion-panel  hideToggle="true" class="myexpension" [expanded]="false" #uploadleads>
+                    <mat-expansion-panel-header style="height:10px">
+                      <mat-panel-title>
+                            <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                                <span class="text-span panel-title">Risk Rating (External) </span>
+                        </mat-panel-title>
+                        <mat-panel-description >
+                                <span class="text-span panel-description"></span>
+                               <span class="text-span panel-icon">
+                                 <i class="material-icons" *ngIf="!uploadleads.expanded" >vertical_align_bottom</i>
+                                 <i class="material-icons" *ngIf="uploadleads.expanded">vertical_align_top</i>
+                               </span>
+
+                        </mat-panel-description>
+
+                      </mat-expansion-panel-header>
+                          <br/>
+                            <!-- <app-uploadleads #UploadleadsComponent></app-uploadleads> -->
+                          <!-- <app-generalinfo (showLoader)="chnageLoaderState($event)" #GeneralinfoComponent></app-generalinfo> -->
+                     <!-- <mat-action-row>
+                        <button mat-fab color="primary" class ="save" >
+                        <i class="material-icons">save</i>
+                    </button>
+                      </mat-action-row> -->
+
+                      <app-risk-rating></app-risk-rating>
+                  </mat-expansion-panel>
+                  <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #proposal>
+                  <mat-expansion-panel-header>
+                    <mat-panel-title>
+                          <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                            <span class="text-span panel-title">Risk Rating (Internal)</span>
+                    </mat-panel-title>
+                    <mat-panel-description>
+                            <span class="text-span panel-description"></span>
+                           <span class="text-span panel-icon">
+                             <i class="material-icons" *ngIf="!proposal.expanded" >vertical_align_bottom</i>
+                             <i class="material-icons" *ngIf="proposal.expanded">vertical_align_top</i>
+                           </span>
+
+                    </mat-panel-description>
+
+                  </mat-expansion-panel-header>
+                      <br/>
+                        <app-proposal-info #UploadleadsComponent></app-proposal-info>
+                      <!-- <app-generalinfo (showLoader)="chnageLoaderState($event)" #GeneralinfoComponent></app-generalinfo> -->
+                   <!-- <mat-action-row>
+                    <button mat-fab color="primary" class ="save" (click)="saveLead()">
+                        <i class="material-icons">save</i>
+                    </button>
+                    </mat-action-row> -->
+                </mat-expansion-panel>
+
+                <mat-expansion-panel  hideToggle="true" class="myexpension"  [expanded]="false" #AddressDetails>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>
+                        <span class="text-span panel-title-icon"><i class="material-icons">texture</i></span>
+                          <span class="text-span panel-title">IFRS Check List</span>
+                  </mat-panel-title>
+                  <mat-panel-description>
+                          <span class="text-span panel-description"></span>
+                         <span class="text-span panel-icon">
+                           <i class="material-icons" *ngIf="!proposal.expanded" >vertical_align_bottom</i>
+                           <i class="material-icons" *ngIf="proposal.expanded">vertical_align_top</i>
+                         </span>
+
+                  </mat-panel-description>
+
+                </mat-expansion-panel-header>
+                    <br/>
+
+                    <app-address-details></app-address-details>
+
+
+
+                </mat-expansion-panel>
+
+
+
+            </mat-accordion>
+
+
+
+
+</mat-tab>
+<mat-tab label="Risk Analysis">
+
+</mat-tab>
+<mat-tab label="Assessment of SOL/Prudential Limit">
+
+</mat-tab>
+
+</mat-tab-group>
+</mat-card-content>
+</mat-card>

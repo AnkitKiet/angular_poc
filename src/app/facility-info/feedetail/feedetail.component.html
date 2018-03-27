@@ -1,0 +1,134 @@
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+    <ng-container matColumnDef="name">
+      <mat-header-cell *matHeaderCellDef>Facility Type</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input  [readonly]="!row.editing" placeholder="Name" [(ngModel)]="row.currentData.name">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="Currency">
+      <mat-header-cell *matHeaderCellDef>Origination Fee  </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input  [readonly]="!row.editing" placeholder="Currency" [(ngModel)]="row.currentData.Currency">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="proplimit">
+      <mat-header-cell *matHeaderCellDef> Annual Fee</mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input  [readonly]="!row.editing" placeholder="Proposed Limit" [(ngModel)]="row.currentData.proplimit">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="intype">
+      <mat-header-cell *matHeaderCellDef> Audit Fee </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input  [readonly]="!row.editing" placeholder="Proposed Limit" [(ngModel)]="row.currentData.intype">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="rating">
+      <mat-header-cell *matHeaderCellDef> Loan Termination Fee </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing" placeholder="Proposed Limit" [(ngModel)]="row.currentData.rating">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+    <ng-container matColumnDef="baserate">
+      <mat-header-cell *matHeaderCellDef> Unused Line of Credit </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing" placeholder="Proposed Limit" [(ngModel)]="row.currentData.baserate">
+        </mat-form-field>
+      </mat-cell>
+    </ng-container>
+   
+    
+    <ng-container matColumnDef="actionsColumn">
+      <mat-header-cell *matHeaderCellDef>
+        <button mat-icon-button color="accent" (click)="addButton()"><i class="fa fa-plus mat-icon"></i></button>
+      </mat-header-cell>
+      <mat-cell *matCellDef="let row">
+        <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+              <i class="fa fa-pencil mat-icon"></i>
+            </button>
+        <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+              <i class="fa fa-check mat-icon"></i>
+            </button>
+        <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+              <i class="fa fa-times mat-icon"></i>
+            </button>
+      </mat-cell>
+    </ng-container>
+  
+    <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+    <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+  </mat-table>
+  
+  
+  
+  
+  
+  <!-- Modal -->
+  <div class="modal fade in" id="repayment-dialog" tabindex="-1">
+    <div class="modal-dialog modal-dialog-centered" role="document">
+      <div class="modal-content">
+        <div class="modal-header" style="height: 40px; background-image:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);">
+          <h5 class="modal-title" id="exampleModalLongTitle">Pricing</h5>
+   
+        </div>
+        <div class="modal-body">
+  
+          <div class="form-group">
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="Facility Type" [(ngModel)]='formData.name'   >
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="Origination Fee" [(ngModel)]='formData.Currency'>
+                </mat-form-field>
+              </div>
+  
+              <div class="col-md-4">
+                <mat-form-field>
+                    <input matInput placeholder="Annual Fee" [(ngModel)]='formData.proplimit'   >
+                  </mat-form-field>
+               
+              </div>
+            </div>
+            <div class="row">
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="Audit Fee" [(ngModel)]='formData.intype'>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="Loan Termination Fee" [(ngModel)]='formData.rating'>
+                </mat-form-field>
+              </div>
+              <div class="col-md-4">
+                <mat-form-field>
+                  <input matInput placeholder="Unused Line of Credit" [(ngModel)]='formData.baserate'>
+                </mat-form-field>
+              </div>
+  
+            </div>
+         
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+            <button type="button" class="btn btn-primary" (click)=savedata(formData)>Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>

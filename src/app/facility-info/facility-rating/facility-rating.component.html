@@ -1,0 +1,218 @@
+<mat-table class="table-margin-bottom" #table [dataSource]="dataSource">
+  <ng-container matColumnDef="name">
+    <mat-header-cell *matHeaderCellDef> Facility Type </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}"  >
+        <mat-select [disabled]="!row.editing" placeholder={{row.currentData.name}} >
+            <mat-option *ngFor="let facility of facilities" [value]="facility.value">
+                {{ facility.viewValue }}
+              </mat-option>
+        </mat-select>
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="remarks">
+    <mat-header-cell *matHeaderCellDef> Remarks </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+        <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.remarks">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+ 
+  <ng-container matColumnDef="cashcnvrn">
+    <mat-header-cell *matHeaderCellDef> Cash Conversion </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <!-- <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput [readonly]="!row.editing" [(ngModel)]="row.currentData.cashcnvrn">
+      </mat-form-field> -->
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}"  >
+          <mat-select [disabled]="!row.editing" placeholder={{row.currentData.cashcnvrn}} >
+              <mat-option *ngFor="let cash of cashlist" [value]="cash.value">
+                  {{ cash.viewValue }}
+                </mat-option>
+          </mat-select>
+        </mat-form-field>
+
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="qtyeva">
+    <mat-header-cell *matHeaderCellDef> Quality of evaluation </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <!-- <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.qtyeva">
+            </mat-form-field> -->
+            <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}"  >
+                <mat-select [disabled]="!row.editing" placeholder={{row.currentData.qtyeva}} >
+                    <mat-option *ngFor="let eva of qualityEvas" [value]="eva.value">
+                        {{ eva.viewValue }}
+                      </mat-option>
+                </mat-select>
+              </mat-form-field>
+            
+
+
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="ltv">
+    <mat-header-cell *matHeaderCellDef> Asset Coverage(LTV) </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <!-- <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.ltv">
+       
+      </mat-form-field> -->
+
+
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}"  >
+          <mat-select [disabled]="!row.editing" placeholder={{row.currentData.ltv}} >
+              <mat-option *ngFor="let ltv of LTVs" [value]="ltv.value">
+                  {{ ltv.viewValue }}
+                </mat-option>
+          </mat-select>
+        </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="score">
+    <mat-header-cell *matHeaderCellDef> Score </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.score">
+            </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="grade">
+    <mat-header-cell *matHeaderCellDef> Grade </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.grade">
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="lgd">
+    <mat-header-cell *matHeaderCellDef> LGD </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <mat-form-field floatPlaceholder="{{ row.editing ? 'float' : 'never'}}">
+          <input matInput  [readonly]="!row.editing"  [(ngModel)]="row.currentData.lgd">
+        <!-- <input matInput [formControl]="row.validator.controls['lgd']" type="number" placeholder="LGD" [(ngModel)]="row.currentData.lgd"> -->
+      </mat-form-field>
+    </mat-cell>
+  </ng-container>
+  <ng-container matColumnDef="actionsColumn">
+    <mat-header-cell *matHeaderCellDef>
+      <button mat-icon-button color="accent" (click)="addButton()"><i class="fa fa-plus mat-icon"></i>Add</button>
+    </mat-header-cell>
+    <mat-cell *matCellDef="let row">
+      <button *ngIf="!row.editing" mat-icon-button color="primary" focusable="false" (click)="row.startEdit()">
+            <i class="fa fa-pencil mat-icon"></i>
+          </button>
+      <button *ngIf="row.editing" mat-icon-button color="primary" focusable="false" (click)="row.confirmEditCreate()">
+            <i class="fa fa-check mat-icon"></i>
+          </button>
+      <button mat-icon-button color="primary" focusable="false" (click)="row.cancelOrDelete()">
+            <i class="fa fa-times mat-icon"></i>
+          </button>
+    </mat-cell>
+  </ng-container>
+
+  <mat-header-row *matHeaderRowDef="displayedColumns"></mat-header-row>
+  <mat-row *matRowDef="let row; columns: displayedColumns;"></mat-row>
+</mat-table>
+
+
+    <!-- Modal -->
+    <div class="modal fade in" id="repayment-dialog" tabindex="-1">
+      <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+          <div class="modal-header" style="height: 40px; background-image:linear-gradient(154deg, rgb(0, 143, 226) 0px, rgb(0, 178, 156) 100%);">
+            <h5 class="modal-title" id="exampleModalLongTitle">Facility Wise Risk Rating</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            
+              <div class="form-group">
+            <div class="row" >
+              <div class="col-md-4">
+                <mat-form-field>
+                  <mat-select placeholder="Facility Type" [(ngModel)]='formData.name' >
+                    <mat-option *ngFor="let food of foods" [value]="food.value"  >
+                      {{ food.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+            </div>
+            <div class="col-md-4"> 
+              <mat-form-field>
+                <input matInput placeholder="Remarks" [(ngModel)]='formData.remarks'   >
+              </mat-form-field>
+            </div>
+          
+            <div class="col-md-4"> 
+                <!-- <mat-form-field>
+                  <input matInput placeholder="Cash Conversion" [(ngModel)]='formData.cashcnvrn'   >
+                </mat-form-field> -->
+                <mat-form-field>
+                  <mat-select placeholder="Cash Conversion" [(ngModel)]='formData.cashcnvrn' >
+                    <mat-option *ngFor="let cash of cashlist" [value]="cash.value"  >
+                      {{ cash.viewValue }}
+                    </mat-option>
+                  </mat-select>
+                </mat-form-field>
+              </div>
+            </div>
+            <div class="row"> 
+
+                 
+                      <div class="col-md-4">
+                      <!-- <mat-form-field>
+                        <input matInput placeholder="Quality of evaluation" [(ngModel)]='formData.qtyeva' >
+                      </mat-form-field> -->
+                      <mat-form-field>
+                        <mat-select placeholder="Quality of evaluation"  [(ngModel)]='formData.qtyeva' >
+                          <mat-option *ngFor="let quality of qualityEvas" [value]="quality.value"  >
+                            {{ quality.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div> 
+                    <div class="col-md-4"> 
+                      <!-- <mat-form-field>
+                        <input matInput placeholder="Asset Coverage(LTV)" [(ngModel)]='formData.ltv'   >
+                      </mat-form-field> -->
+                      <mat-form-field>
+                        <mat-select placeholder="Asset Coverage(LTV)" [(ngModel)]='formData.ltv'  >
+                          <mat-option *ngFor="let ltv of LTVs" [value]="ltv.value"  >
+                            {{ ltv.viewValue }}
+                          </mat-option>
+                        </mat-select>
+                      </mat-form-field>
+                    </div>
+                    <div class="col-md-4"> 
+                        <mat-form-field>
+                          <input matInput placeholder="Score" [(ngModel)]='formData.score'   >
+                        </mat-form-field>
+                      </div>
+                           </div>
+                           <div class="row">
+                              <div class="col-md-4">
+                              <mat-form-field>
+                                <input matInput placeholder="Grade" [(ngModel)]='formData.grade' >
+                              </mat-form-field>
+                            </div>
+                            <div class="col-md-4"> 
+                              <mat-form-field>
+                                <input matInput placeholder="LGD" [(ngModel)]='formData.lgd'   >
+                              </mat-form-field>
+                            </div>
+                           
+                                   </div></div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal" (click)=addButton()>Close</button>
+            <button type="button" class="btn btn-primary" (click)=savedata(formData) >Save changes</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+

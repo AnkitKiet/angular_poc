@@ -1,0 +1,39 @@
+
+:host ::ng-deep .header-logo{
+    width: 145px;
+height: 80px;
+margin: 2px 25px;
+}
+.mat-card:not([class*=mat-elevation-z]){
+	box-shadow: none;
+}
+.mat-card-content{
+	overflow:hidden;
+}
+mat-card{    
+    background-color:#ecf0f9;    
+      
+     height:140px;
+    padding-left : 0px;
+    
+    padding-bottom: 0px;    
+}
+
+.data{
+    padding-left: 30px;
+}
+:host ::ng-deep .mat-form-field-infix{
+    width: 236px;
+min-width: 0px;
+padding: 5px;
+margin-bottom: -10px;
+margin-top: -8px;
+}
+.row{
+    
+line-height:25px;
+color:black;
+font-weight: 500;
+font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+font-size: 1.1em;
+}

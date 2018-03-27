@@ -1,0 +1,27 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    max-height: 500px;
+    min-width: 300px;
+  }
+  
+  .mat-table {
+    overflow: auto;
+    max-height: 500px;
+  }
+
+  .mat-header-row {
+    background:rgb(0, 143, 226);
+   
+  
+}
+.mat-header-cell{
+  font-size: 16px;
+  font-weight: 500;
+text-align: center;
+word-wrap: normal;
+color: white;
+}
+.mat-row{
+  text-align: center;
+}
